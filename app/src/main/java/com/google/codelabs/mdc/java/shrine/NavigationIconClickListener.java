@@ -11,6 +11,8 @@ import android.view.animation.Interpolator;
 import android.widget.ImageView;
 import androidx.annotation.Nullable;
 
+import com.google.codelabs.mdc.java.shinre.R;
+
 /**
  * {@link android.view.View.OnClickListener} used to translate the product grid sheet downward on
  * the Y-axis when the navigation icon in the toolbar is pressed.

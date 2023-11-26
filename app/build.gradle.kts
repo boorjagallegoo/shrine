@@ -37,6 +37,8 @@ dependencies {
     implementation ("com.android.volley:volley:1.2.1")  // Volley
     implementation ("com.google.code.gson:gson:2.8.9") // Gson
     implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test:core:1.5.0")
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")

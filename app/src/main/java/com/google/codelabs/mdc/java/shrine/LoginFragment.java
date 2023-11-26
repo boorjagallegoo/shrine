@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.codelabs.mdc.java.shinre.R;
+
 /**
  * Fragment representing the login screen for Shrine.
  */
