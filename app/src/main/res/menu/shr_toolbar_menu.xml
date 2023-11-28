@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Este archivo XML define un menú de opciones para ser utilizado en la barra de aplicaciones
+    (ActionBar) o en la barra de herramientas (Toolbar) de una actividad.
+
+    Los elementos principales incluyen dos ítems de menú:
+    - "search": un ícono de búsqueda para activar la funcionalidad de búsqueda.
+    - "filter": un ícono de filtro para activar la funcionalidad de filtrado.
+
+    Ambos ítems están configurados para mostrarse siempre en la barra de aplicaciones o
+    barra de herramientas utilizando app:showAsAction="always".
+-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Ítem de menú para la funcionalidad de búsqueda -->
     <item
         android:id="@+id/search"
         android:icon="@drawable/shr_search"
         android:title="@string/shr_search_title"
         app:showAsAction="always" />
+
+    <!-- Ítem de menú para la funcionalidad de filtrado -->
     <item
         android:id="@+id/filter"
         android:icon="@drawable/shr_filter"

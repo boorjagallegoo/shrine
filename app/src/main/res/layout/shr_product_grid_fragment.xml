@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    Este diseño representa la interfaz de usuario de la pantalla de la cuadrícula de productos.
+    Utiliza un FrameLayout como contenedor principal.
+
+    Los elementos principales incluyen:
+    - Un AppBarLayout con una Toolbar que actúa como la barra de aplicaciones superior.
+    - Un NestedScrollView que permite el desplazamiento del contenido dentro del FrameLayout.
+    - Un RecyclerView para mostrar la cuadrícula de productos.
+
+    La barra de aplicaciones incluye un ícono de navegación y un título correspondiente al nombre de la aplicación.
+
+    El NestedScrollView contiene el RecyclerView para mostrar una lista de productos en una cuadrícula.
+-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,10 +18,12 @@
     android:layout_height="match_parent"
     tools:context="com.google.codelabs.mdc.java.shrine.ProductGridFragment">
 
+    <!-- AppBarLayout con una Toolbar -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Toolbar que actúa como la barra de aplicaciones superior -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/app_bar"
             style="@style/Widget.Shrine.Toolbar"
@@ -19,6 +33,7 @@
             app:title="@string/shr_app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- NestedScrollView para permitir el desplazamiento del contenido -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,6 +43,7 @@
         android:paddingEnd="@dimen/shr_product_grid_spacing"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <!-- RecyclerView para mostrar la cuadrícula de productos -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"

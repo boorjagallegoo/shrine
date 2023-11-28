@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    Este diseño representa una tarjeta de producto utilizando MaterialCardView.
+    La tarjeta tiene una imagen de producto, un título y un precio.
+
+    Los elementos principales incluyen:
+    - MaterialCardView: Un contenedor de tarjeta que proporciona sombra y esquinas redondeadas.
+    - NetworkImageView: Un componente de Volley para cargar y mostrar imágenes desde la red.
+    - LinearLayout: Un diseño vertical que contiene la imagen, el título y el precio del producto.
+    - TextViews: Para mostrar el título y el precio del producto.
+
+    La apariencia de la tarjeta está configurada con elevación, esquinas redondeadas y color de fondo.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,11 +20,13 @@
     app:cardElevation="2dp"
     app:cardPreventCornerOverlap="true">
 
+    <!-- LinearLayout vertical que contiene la imagen, el título y el precio del producto -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- NetworkImageView para mostrar la imagen del producto desde la red -->
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/product_image"
             android:layout_width="match_parent"
@@ -19,12 +34,14 @@
             android:background="?attr/colorPrimaryDark"
             android:scaleType="centerCrop" />
 
+        <!-- LinearLayout con padding que contiene el título y el precio del producto -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
 
+            <!-- TextView para mostrar el título del producto -->
             <TextView
                 android:id="@+id/product_title"
                 android:layout_width="match_parent"
@@ -32,6 +49,7 @@
                 android:text="@string/shr_product_title"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
+            <!-- TextView para mostrar el precio del producto -->
             <TextView
                 android:id="@+id/product_price"
                 android:layout_width="match_parent"

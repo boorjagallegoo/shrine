@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Este diseño representa la interfaz de usuario de la pantalla de inicio de sesión.
+    Utiliza un ScrollView para permitir el desplazamiento si el contenido es demasiado grande
+    para caber en la pantalla.
+
+    Los elementos principales incluyen:
+    - Un LinearLayout vertical que contiene todos los elementos de la interfaz.
+    - Un ImageView para mostrar el logotipo de la aplicación.
+    - Un TextView que muestra el nombre de la aplicación.
+    - Dos TextInputLayout con TextInputEditText para ingresar el nombre de usuario y la contraseña.
+    - Dos botones MaterialButton para "Next" y "Cancel".
+-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,6 +28,7 @@
         android:padding="24dp"
         android:paddingTop="16dp">
 
+        <!-- ImageView para el logotipo de la aplicación. -->
         <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -24,6 +37,7 @@
             android:layout_marginBottom="16dp"
             app:srcCompat="@drawable/shr_logo" />
 
+        <!-- TextView para el nombre de la aplicación. -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,7 +47,7 @@
             android:textAllCaps="true"
             android:textSize="16sp" />
 
-        <!-- Snippet from "Add text fields" section goes here. -->
+        <!-- TextInputLayout para ingresar el nombre de usuario. -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,6 +61,7 @@
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- TextInputLayout para ingresar la contraseña. -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_text_input"
             android:layout_width="match_parent"
@@ -62,11 +77,12 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Snippet from "Add buttons" section goes here. -->
+        <!-- RelativeLayout que contiene los botones "Next" y "Cancel". -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- Botón "Next" para avanzar en el proceso de inicio de sesión. -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/next_button"
                 android:layout_width="wrap_content"
@@ -75,6 +91,7 @@
                 android:layout_alignParentRight="true"
                 android:text="@string/shr_button_next" />
 
+            <!-- Botón "Cancel" para cancelar el proceso de inicio de sesión. -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel_button"
                 style="@style/Widget.MaterialComponents.Button.TextButton"

@@ -14,18 +14,30 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * Adapter used to show a simple grid of products.
+ * Adaptador utilizado para mostrar una cuadrícula simple de productos.
  */
 public class ProductCardRecyclerViewAdapter extends RecyclerView.Adapter<ProductCardViewHolder> {
 
     private List<ProductEntry> productList;
     private ImageRequester imageRequester;
 
+    /**
+     * Constructor del adaptador.
+     *
+     * @param productList Lista de productos para mostrar en la cuadrícula.
+     */
     ProductCardRecyclerViewAdapter(List<ProductEntry> productList) {
         this.productList = productList;
         imageRequester = ImageRequester.getInstance();
     }
 
+    /**
+     * Crea y devuelve un nuevo ViewHolder.
+     *
+     * @param parent   El ViewGroup en el que se inflará el nuevo diseño.
+     * @param viewType El tipo de vista del nuevo diseño.
+     * @return Un nuevo ViewHolder que contiene la vista inflada.
+     */
     @NonNull
     @Override
     public ProductCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -33,6 +45,12 @@ public class ProductCardRecyclerViewAdapter extends RecyclerView.Adapter<Product
         return new ProductCardViewHolder(layoutView);
     }
 
+    /**
+     * Llena el contenido de un ViewHolder dado en una posición específica.
+     *
+     * @param holder   El ViewHolder que se actualizará.
+     * @param position La posición del elemento en los datos.
+     */
     @Override
     public void onBindViewHolder(@NonNull ProductCardViewHolder holder, int position) {
         if (productList != null && position < productList.size()) {
@@ -43,6 +61,11 @@ public class ProductCardRecyclerViewAdapter extends RecyclerView.Adapter<Product
         }
     }
 
+    /**
+     * Devuelve el número total de elementos en el conjunto de datos.
+     *
+     * @return El número total de elementos en el conjunto de datos.
+     */
     @Override
     public int getItemCount() {
         return productList.size();
