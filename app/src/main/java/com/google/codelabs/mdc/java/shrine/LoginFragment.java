@@ -50,6 +50,8 @@ public class LoginFragment extends Fragment {
                     passwordTextInput.setError(getString(R.string.shr_error_password));
                 } else {
                     passwordTextInput.setError(null); // Limpia el error
+                    ((NavigationHost) getActivity()).navigateTo(new ProductGridFragment(), false); // Navigate to the next Fragment
+
                 }
             }
         });
