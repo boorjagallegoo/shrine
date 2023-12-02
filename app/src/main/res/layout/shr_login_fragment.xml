@@ -28,30 +28,27 @@
         android:padding="24dp"
         android:paddingTop="16dp">
 
-        <!-- ImageView para el logotipo de la aplicación. -->
         <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="16dp"
-            app:srcCompat="@drawable/shr_logo" />
+            app:srcCompat="@drawable/shr_logo"
+            app:tint="?android:attr/textColorPrimary" />
 
-        <!-- TextView para el nombre de la aplicación. -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="132dp"
             android:text="@string/shr_app_name"
-            android:textAllCaps="true"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.Shrine.Title" />
 
-        <!-- TextInputLayout para ingresar el nombre de usuario. -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
             android:hint="@string/shr_hint_username">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -61,12 +58,11 @@
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- TextInputLayout para ingresar la contraseña. -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_text_input"
+            style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
             android:hint="@string/shr_hint_password"
             app:errorEnabled="true">
 
@@ -74,27 +70,25 @@
                 android:id="@+id/password_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- RelativeLayout que contiene los botones "Next" y "Cancel". -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Botón "Next" para avanzar en el proceso de inicio de sesión. -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/next_button"
+                style="@style/Widget.Shrine.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:text="@string/shr_button_next" />
 
-            <!-- Botón "Cancel" para cancelar el proceso de inicio de sesión. -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel_button"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.Shrine.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
@@ -104,6 +98,5 @@
                 android:text="@string/shr_button_cancel" />
 
         </RelativeLayout>
-
     </LinearLayout>
 </ScrollView>
