@@ -1,15 +1,14 @@
-/**
- * Un fragmento que representa la pantalla de cuadrícula de productos.
- * Muestra una cuadrícula de productos utilizando un RecyclerView.
- */
 package com.google.codelabs.mdc.java.shrine;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -21,15 +20,14 @@ import com.google.codelabs.mdc.java.shinre.R;
 import com.google.codelabs.mdc.java.shrine.network.ProductEntry;
 
 /**
- * Subclase de {@link Fragment} para mostrar una cuadrícula de productos.
+ * Fragmento que muestra una cuadrícula de productos utilizando RecyclerView.
  */
 public class ProductGridFragment extends Fragment {
 
     /**
-     * Llamado para la creación inicial del fragmento.
+     * Configura las opciones del menú en la barra de herramientas.
      *
-     * @param savedInstanceState Si el fragmento se está recreando a partir de un estado previamente guardado,
-     *                           este es el estado.
+     * @param savedInstanceState Estado previamente guardado de la instancia.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,13 +36,12 @@ public class ProductGridFragment extends Fragment {
     }
 
     /**
-     * Llamado para que el fragmento instancie su interfaz de usuario.
+     * Infla y configura la vista para este fragmento, incluida la barra de herramientas y el RecyclerView.
      *
-     * @param inflater           El objeto LayoutInflater que se puede usar para inflar cualquier vista en el fragmento,
-     * @param container          Si no es nulo, esta es la vista principal a la que se debe adjuntar la interfaz de usuario del fragmento.
-     *                           El fragmento no debe agregar la vista en sí, pero esto se puede usar para generar el LayoutParams de la vista.
-     * @param savedInstanceState Si no es nulo, este fragmento se está reconstruyendo a partir de un estado previamente guardado según se indica aquí.
-     * @return Devuelve la Vista para la interfaz de usuario del fragmento, o nulo.
+     * @param inflater           El inflador que se utilizará para inflar la vista.
+     * @param container          El contenedor en el que se debe colocar la vista.
+     * @param savedInstanceState Estado previamente guardado de la instancia.
+     * @return La vista inflada y configurada para el fragmento.
      */
     @Override
     public View onCreateView(
@@ -77,13 +74,19 @@ public class ProductGridFragment extends Fragment {
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small);
         recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
 
+        // Establecer el fondo de esquina cortada para API 23+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            view.findViewById(R.id.product_grid)
+                    .setBackgroundResource(R.drawable.shr_product_grid_background_shape);
+        }
+
         return view;
     }
 
     /**
-     * Configurar la barra de herramientas para el fragmento.
+     * Configura la barra de herramientas con un icono de menú personalizado y una animación de clic de navegación.
      *
-     * @param view La vista principal del fragmento.
+     * @param view La vista que contiene la barra de herramientas.
      */
     private void setUpToolbar(View view) {
         Toolbar toolbar = view.findViewById(R.id.app_bar);
@@ -91,13 +94,20 @@ public class ProductGridFragment extends Fragment {
         if (activity != null) {
             activity.setSupportActionBar(toolbar);
         }
+
+        toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
+                getContext(),
+                view.findViewById(R.id.product_grid),
+                new AccelerateDecelerateInterpolator(),
+                getContext().getResources().getDrawable(R.drawable.shr_branded_menu), // Icono de apertura del menú
+                getContext().getResources().getDrawable(R.drawable.shr_close_menu))); // Icono de cierre del menú
     }
 
     /**
-     * Inicializar el contenido del menú de opciones estándar de la actividad.
+     * Infla las opciones del menú en la barra de herramientas.
      *
-     * @param menu            El menú de opciones en el que colocas tus elementos.
-     * @param menuInflater    El objeto MenuInflater que se puede usar para inflar el menú.
+     * @param menu              El menú en el que se inflarán las opciones.
+     * @param menuInflater      El inflador que se utilizará para inflar las opciones del menú.
      */
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {

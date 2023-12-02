@@ -1,15 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-    Este diseño representa la interfaz de usuario de la pantalla de la cuadrícula de productos.
-    Utiliza un FrameLayout como contenedor principal.
-
-    Los elementos principales incluyen:
-    - Un AppBarLayout con una Toolbar que actúa como la barra de aplicaciones superior.
-    - Un NestedScrollView que permite el desplazamiento del contenido dentro del FrameLayout.
-    - Un RecyclerView para mostrar la cuadrícula de productos.
-
-    La barra de aplicaciones incluye un ícono de navegación y un título correspondiente al nombre de la aplicación.
-
-    El NestedScrollView contiene el RecyclerView para mostrar una lista de productos en una cuadrícula.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FrameLayout que representa la vista principal de ProductGridFragment.
+    Contiene un LinearLayout con un AppBar, un Backdrop y un NestedScrollView
+    con un RecyclerView para mostrar la cuadrícula de productos.
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,22 +11,54 @@
     android:layout_height="match_parent"
     tools:context="com.google.codelabs.mdc.java.shrine.ProductGridFragment">
 
-    <!-- AppBarLayout con una Toolbar -->
+    <!--
+        LinearLayout que organiza los elementos de la vista.
+        Contiene un Backdrop que ocupa la pantalla completa y está centrado verticalmente.
+    -->
+    <LinearLayout
+        style="@style/Widget.Shrine.Backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="88dp">
+
+        <!--
+            Incluye el diseño del backdrop definido en shr_backdrop.xml.
+        -->
+        <include layout="@layout/shr_backdrop" />
+    </LinearLayout>
+
+    <!--
+        AppBarLayout que contiene la barra de herramientas (Toolbar) con el menú y el título de la aplicación.
+    -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:elevation="0dp">
 
+        <!--
+            Toolbar que muestra el título de la aplicación, el icono de menú y el fondo personalizado.
+        -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/app_bar"
             style="@style/Widget.Shrine.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/shr_menu"
+            android:paddingStart="12dp"
+            android:paddingLeft="12dp"
+            android:paddingEnd="12dp"
+            android:paddingRight="12dp"
+            app:contentInsetStart="0dp"
+            app:navigationIcon="@drawable/shr_branded_menu"
             app:title="@string/shr_app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!--
+        NestedScrollView que permite el desplazamiento de la cuadrícula de productos.
+    -->
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/product_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="56dp"
@@ -41,12 +66,12 @@
         android:elevation="8dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <!--
+            RecyclerView que muestra la cuadrícula de productos.
+        -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
     </androidx.core.widget.NestedScrollView>
-
-
 </FrameLayout>
