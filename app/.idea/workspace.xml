@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="42fff189-d48c-4fb6-ab9f-b1469ca2ee2d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/google/codelabs/mdc/java/shrine/ProductCardRecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/google/codelabs/mdc/java/shrine/ProductCardRecyclerViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/google/codelabs/mdc/java/shrine/ProductCardViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/google/codelabs/mdc/java/shrine/ProductCardViewHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/google/codelabs/mdc/java/shrine/ProductGridFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/google/codelabs/mdc/java/shrine/ProductGridFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/shr_product_card.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/shr_product_card.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/shr_product_grid_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/shr_product_grid_fragment.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2YzS36fskdV9HwDC15pumppTy7T" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "android.gradle.sync.needed": "true",
+    "git-widget-placeholder": "102-starter",
+    "last_opened_file_path": "F:/personal/Ciclos/Android Studio/Ejercicios en clase/TemaNuevo/shrine/app"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42fff189-d48c-4fb6-ab9f-b1469ca2ee2d" name="Changes" comment="" />
+      <created>1701526712732</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701526712732</updated>
+    </task>
+    <servers />
+  </component>
+</project>

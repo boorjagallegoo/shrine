@@ -14,13 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 public class ProductCardViewHolder extends RecyclerView.ViewHolder {
 
-    /** ImageView para mostrar la imagen del producto. */
     public NetworkImageView productImage;
-
-    /** TextView para mostrar el título del producto. */
     public TextView productTitle;
-
-    /** TextView para mostrar el precio del producto. */
     public TextView productPrice;
 
     /**

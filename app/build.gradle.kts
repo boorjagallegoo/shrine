@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    api ("com.google.android.material:material:1.10.0")
+    api ("com.google.android.material:material:1.12.0-alpha01")
     implementation ("androidx.legacy:legacy-support-v4:1.0.0")
     implementation ("com.android.volley:volley:1.2.1")  // Volley
     implementation ("com.google.code.gson:gson:2.8.9") // Gson

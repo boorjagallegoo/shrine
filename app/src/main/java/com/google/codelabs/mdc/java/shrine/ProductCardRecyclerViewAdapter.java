@@ -59,6 +59,7 @@ public class ProductCardRecyclerViewAdapter extends RecyclerView.Adapter<Product
             holder.productPrice.setText(product.price);
             imageRequester.setImageFromUrl(holder.productImage, product.url);
         }
+
     }
 
     /**
