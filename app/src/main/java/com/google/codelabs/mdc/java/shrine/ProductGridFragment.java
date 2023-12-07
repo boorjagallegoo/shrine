@@ -4,12 +4,15 @@
  */
 package com.google.codelabs.mdc.java.shrine;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -75,6 +78,13 @@ public class ProductGridFragment extends Fragment {
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small);
         recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
 
+        /* Java 104: 4. Add a shape
+        Establecer el fondo de esquina cortada para API 23+ */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            view.findViewById(R.id.product_grid)
+                    .setBackgroundResource(R.drawable.shr_product_grid_background_shape);
+        }
+
         return view;
     }
 
@@ -89,6 +99,15 @@ public class ProductGridFragment extends Fragment {
         if (activity != null) {
             activity.setSupportActionBar(toolbar);
         }
+
+        // Java 104: 5. Add motion
+        toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
+                getContext(),
+                view.findViewById(R.id.product_grid),
+                new AccelerateDecelerateInterpolator(),
+                // Java 104: 6. Branded icon
+                getContext().getResources().getDrawable(R.drawable.shr_branded_menu), // Icono de apertura del menú
+                getContext().getResources().getDrawable(R.drawable.shr_close_menu))); // Icono de cierre del menú
     }
 
     /**

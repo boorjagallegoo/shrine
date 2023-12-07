@@ -2,14 +2,28 @@
 <!--
     FrameLayout que representa la vista principal de ProductGridFragment.
     Contiene un LinearLayout con un AppBar, un Backdrop y un NestedScrollView
-    con un RecyclerView para mostrar la cuadrícula de productos.
--->
+    con un RecyclerView para mostrar la cuadrícula de productos. -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.google.codelabs.mdc.java.shrine.ProductGridFragment">
+
+    <!-- Java 104: 3. Add the backdrop menu
+       LinearLayout que organiza los elementos de la vista.
+       Contiene un Backdrop que ocupa la pantalla completa y está centrado verticalmente.-->
+    <LinearLayout
+        style="@style/Widget.Shrine.Backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="88dp">
+
+        <!-- Incluye el diseño del backdrop definido en shr_backdrop.xml.-->
+        <include layout="@layout/shr_backdrop" />
+    </LinearLayout>
 
     <!--
        AppBarLayout que contiene la barra de herramientas (Toolbar) con el menú y el título de la aplicación.
